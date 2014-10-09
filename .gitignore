@@ -1,0 +1,8 @@
+*/.classpath
+*/build/*
+*/bin/*
+*/.gradle/*
+*/.settings/*
+*/.project
+ToDOweb/toDO_list.json
+ToDO/toDO_list.json
