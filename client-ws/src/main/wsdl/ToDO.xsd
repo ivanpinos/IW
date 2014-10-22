@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:tns="http://soapserver.bigws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soapserver.bigws/">
+
+<xs:element name="guardarCambios" type="tns:guardarCambios"/>
+
+<xs:element name="guardarCambiosResponse" type="tns:guardarCambiosResponse"/>
+
+<xs:element name="lista" type="tns:lista"/>
+
+<xs:element name="listaResponse" type="tns:listaResponse"/>
+
+<xs:complexType name="guardarCambios">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarCambiosResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="lista">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

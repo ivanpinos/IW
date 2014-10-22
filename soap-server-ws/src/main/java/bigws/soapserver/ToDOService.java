@@ -22,7 +22,7 @@ public class ToDOService {
 	
 	// Devuelve una lista con los elementos de .json.
 	@WebMethod()
-	public List<ToDO> lista() {
+	public String lista() {
 		ToDOList todolist;
 		List<ToDO> list;
 		Gson gson = new Gson();
@@ -31,10 +31,12 @@ public class ToDOService {
 					ToDOList.class);
 			list = todolist.getToDoList();
 		} catch (FileNotFoundException e) {
-			System.out.println("FALLO");
 			list = null;
 		}
-		return list;
+		String json="";
+		if(list != null)
+			json = new Gson().toJson(list);
+		return json;
 	}
 
 	/*
