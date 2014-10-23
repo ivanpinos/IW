@@ -1,7 +1,5 @@
 package bigws.ToDO;
 
-import javax.xml.bind.annotation.XmlTransient;
-
 public class ToDO {
 	
 	public String getTask() {
@@ -36,10 +34,10 @@ public class ToDO {
 		this.priority = priority;
 	}
 	
-	@XmlTransient public String task;
-	@XmlTransient public String context;
-	@XmlTransient public String project;
-	@XmlTransient public int priority;
+	private String task;
+	private String context;
+	private String project;
+	private int priority;
 	
 	public boolean hasContext() {
 		return context != null;
