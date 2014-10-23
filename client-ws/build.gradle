@@ -27,7 +27,6 @@ repositories {
 dependencies {
    jaxws "com.sun.xml.ws:jaxws-rt:2.2.8"
    jaxws "com.sun.xml.ws:jaxws-tools:2.2.8"
-   compile 'com.google.code.gson:gson:2.3'
    providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
 }
 

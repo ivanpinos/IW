@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.jws.WebMethod;
@@ -23,7 +22,7 @@ public class ToDOService {
 	
 	// Devuelve una lista con los elementos de .json.
 	@WebMethod()
-	public List<ToDO> lista() {
+	public String lista() {
 		ToDOList todolist;
 		List<ToDO> list;
 		Gson gson = new Gson();
@@ -31,25 +30,27 @@ public class ToDOService {
 			todolist = gson.fromJson(new FileReader(DEFAULT_FILE_NAME),
 					ToDOList.class);
 			list = todolist.getToDoList();
-			System.out.println(list.size());
-		} catch (Exception e) {
-			list = new ArrayList<ToDO>();
+		} catch (FileNotFoundException e) {
+			list = null;
 		}
-		return list;
+		String json="";
+		if(list != null)
+			json = new Gson().toJson(list);
+		return json;
 	}
 
 	/*
 	 * Guarda los nuevos datos en el fichero
 	 */
 	@WebMethod()
-	public void guardarCambios(List<ToDO> data) {
+	public void guardarCambios(String data) {
+		ToDOList toDoList = new ToDOList();
 		Gson gson = new Gson();
+		toDoList = gson.fromJson(data, ToDOList.class);
 		FileWriter output;
-		ToDOList list = new ToDOList();
 		try {
-			list.setToDoList(data);
 			output = new FileWriter(DEFAULT_FILE_NAME);
-			output.write(gson.toJson(list));
+			output.write(gson.toJson(toDoList));
 			output.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
