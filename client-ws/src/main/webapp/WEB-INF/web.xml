@@ -7,22 +7,4 @@
     <welcome-file-list>
 	    <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-    <servlet>
-    <servlet-name>load</servlet-name>
-    <servlet-class>bigws.soapserver.load</servlet-class>
-    <load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-	    <servlet-name>load</servlet-name>
-	    <url-pattern>//load</url-pattern>
-	</servlet-mapping>
-	<servlet>
-	    <servlet-name>save</servlet-name>
-	    <servlet-class>bigws.soapserver.save</servlet-class>
-	    <load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-	    <servlet-name>save</servlet-name>
-	    <url-pattern>/save</url-pattern>
-	</servlet-mapping>
 </web-app>
