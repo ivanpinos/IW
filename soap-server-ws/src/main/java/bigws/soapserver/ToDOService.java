@@ -1,6 +1,5 @@
 package bigws.soapserver;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -31,7 +30,6 @@ public class ToDOService {
 			todolist = gson.fromJson(new FileReader(DEFAULT_FILE_NAME),
 					ToDOList.class);
 			list = todolist.getToDoList();
-			System.out.println(list.size());
 		} catch (Exception e) {
 			list = new ArrayList<ToDO>();
 		}
