@@ -5,3 +5,5 @@
 * [ToDOweb](ToDOweb)
 * [client-ws](client-ws)
 * [soap-server-ws](soap-server-ws)
+* [ToDoClientREST](ToDoClientREST)
+* [ToDoServerREST](ToDoServerREST)
